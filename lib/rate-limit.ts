@@ -37,7 +37,7 @@ function initializeRateLimiters() {
           '1 m'
         ),
         analytics: true,
-        prefix: 'rl:cipher:free',
+        prefix: 'endpnt:ratelimit:cipher:free',
       }),
       starter: new Ratelimit({
         redis: redisInstance,
@@ -46,7 +46,7 @@ function initializeRateLimiters() {
           '1 m'
         ),
         analytics: true,
-        prefix: 'rl:cipher:starter',
+        prefix: 'endpnt:ratelimit:cipher:starter',
       }),
       pro: new Ratelimit({
         redis: redisInstance,
@@ -55,7 +55,7 @@ function initializeRateLimiters() {
           '1 m'
         ),
         analytics: true,
-        prefix: 'rl:cipher:pro',
+        prefix: 'endpnt:ratelimit:cipher:pro',
       }),
       enterprise: new Ratelimit({
         redis: redisInstance,
@@ -64,7 +64,7 @@ function initializeRateLimiters() {
           '1 m'
         ),
         analytics: true,
-        prefix: 'rl:cipher:enterprise',
+        prefix: 'endpnt:ratelimit:cipher:enterprise',
       }),
     }
   }
@@ -83,7 +83,7 @@ function initializeDemoRateLimit() {
         `${DEMO_RATE_LIMIT.window_minutes} m`
       ),
       analytics: true,
-      prefix: 'rl:cipher:demo',
+      prefix: 'endpnt:demo:cipher:ratelimit',
     })
   }
   return demoRateLimit
